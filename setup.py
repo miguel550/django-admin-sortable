@@ -1,7 +1,12 @@
 from setuptools import setup, find_packages
 
 with open('README.rst', encoding='utf8') as readme_file:
-    README = readme_file.read()
+    README = "Not available."
+    try:
+        README = readme_file.read()
+    except UnicodeDecodeError as e:
+        pass
+        
 
 setup(
     author='Brandon Taylor',
